@@ -1,0 +1,14 @@
+/home/lovi/GitHub/Pomodoro-Timer/bin/Debug/net9.0/Pomodoro-Timer
+/home/lovi/GitHub/Pomodoro-Timer/bin/Debug/net9.0/Pomodoro-Timer.deps.json
+/home/lovi/GitHub/Pomodoro-Timer/bin/Debug/net9.0/Pomodoro-Timer.runtimeconfig.json
+/home/lovi/GitHub/Pomodoro-Timer/bin/Debug/net9.0/Pomodoro-Timer.dll
+/home/lovi/GitHub/Pomodoro-Timer/bin/Debug/net9.0/Pomodoro-Timer.pdb
+/home/lovi/GitHub/Pomodoro-Timer/obj/Debug/net9.0/Pomodoro-Timer.GeneratedMSBuildEditorConfig.editorconfig
+/home/lovi/GitHub/Pomodoro-Timer/obj/Debug/net9.0/Pomodoro-Timer.AssemblyInfoInputs.cache
+/home/lovi/GitHub/Pomodoro-Timer/obj/Debug/net9.0/Pomodoro-Timer.AssemblyInfo.cs
+/home/lovi/GitHub/Pomodoro-Timer/obj/Debug/net9.0/Pomodoro-Timer.csproj.CoreCompileInputs.cache
+/home/lovi/GitHub/Pomodoro-Timer/obj/Debug/net9.0/Pomodoro-Timer.dll
+/home/lovi/GitHub/Pomodoro-Timer/obj/Debug/net9.0/refint/Pomodoro-Timer.dll
+/home/lovi/GitHub/Pomodoro-Timer/obj/Debug/net9.0/Pomodoro-Timer.pdb
+/home/lovi/GitHub/Pomodoro-Timer/obj/Debug/net9.0/Pomodoro-Timer.genruntimeconfig.cache
+/home/lovi/GitHub/Pomodoro-Timer/obj/Debug/net9.0/ref/Pomodoro-Timer.dll
