@@ -3,12 +3,13 @@ using System.IO;
 using System.Timers;
 using System.Threading.Tasks;
 using LibVLCSharp.Shared;
+using System.Media;
+using System.Diagnostics;
 
 public class Pomodoro {
 
-        private static System.Timers.Timer? workTimer;
-        private static int timeLeft;
-        private static string soundFilePath = "cdt-el-bananero.mp3"; 
+        private System.Timers.Timer? workTimer;
+        private int timeLeft;
         
         public Pomodoro(int min){
             timeLeft = min * 60;
@@ -26,7 +27,7 @@ public class Pomodoro {
             workTimer?.Start();  
         }
 
-        private static void OnTimedEvent(object source, ElapsedEventArgs e) {
+        private void OnTimedEvent(object source, ElapsedEventArgs e) {
             if (timeLeft > 0) {
                 int minutes = timeLeft / 60;
                 int seconds = timeLeft % 60;
@@ -41,7 +42,7 @@ public class Pomodoro {
             }
         }
 
-        private static void ShowAlert() {            
+        private void ShowAlert() {            
             
             Gtk.Application.Init();
             Gtk.Window myWin = new Gtk.Window("Alerta Pomodoro");
@@ -60,27 +61,23 @@ public class Pomodoro {
             Gtk.Application.Run();            
         }
 
-        private static void PlaySound() {
-            Core.Initialize();
-
-            using (var libVLC = new LibVLC())
-            using (var mediaPlayer = new MediaPlayer(libVLC)) {
-                try {
-                    var media = new Media(libVLC, new Uri(Path.GetFullPath(soundFilePath)));
-                    mediaPlayer.Play(media);
-                    Console.WriteLine("Reproduciendo sonido...");
-
-                    while (mediaPlayer.IsPlaying) {
-                        System.Threading.Thread.Sleep(100);
-                    }
-
-                    Console.WriteLine("Reproducción finalizada.");
-                }
-                catch (Exception ex) {
-                    Console.WriteLine($"Error al reproducir el sonido: {ex.Message}");
-                }
+        public void PlaySound() {
+            string archivoWav = "cdt-el-bananero.wav"; 
+            
+            if (Environment.OSVersion.Platform == PlatformID.Unix) {            
+                Process.Start("aplay", archivoWav);
             }
+            else if (Environment.OSVersion.Platform == PlatformID.Win32NT) {                
+                Process.Start("wmplayer", archivoWav);
+            }
+            else {
+                Console.WriteLine("Sistema no soportado para reproducción de audio.");
+            }
+
+            Console.WriteLine("Reproducción iniciada...");
+            Console.ReadLine(); 
         }
+
 
         
         

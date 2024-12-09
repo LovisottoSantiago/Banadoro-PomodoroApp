@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hImMk+iyPek=",
+  "dgSpecHash": "akbDYMgEd7Y=",
   "success": true,
   "projectFilePath": "/home/lovi/GitHub/Pomodoro-Timer/Pomodoro-Timer.csproj",
   "expectedPackageFiles": [
@@ -11,7 +11,8 @@
     "/home/lovi/.nuget/packages/glibsharp/3.24.24.95/glibsharp.3.24.24.95.nupkg.sha512",
     "/home/lovi/.nuget/packages/gtksharp/3.24.24.95/gtksharp.3.24.24.95.nupkg.sha512",
     "/home/lovi/.nuget/packages/libvlcsharp/3.9.1/libvlcsharp.3.9.1.nupkg.sha512",
-    "/home/lovi/.nuget/packages/pangosharp/3.24.24.95/pangosharp.3.24.24.95.nupkg.sha512"
+    "/home/lovi/.nuget/packages/pangosharp/3.24.24.95/pangosharp.3.24.24.95.nupkg.sha512",
+    "/home/lovi/.nuget/packages/system.windows.extensions/9.0.0/system.windows.extensions.9.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,21 +1,14 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
 using LibVLCSharp.Shared;
+using System.Media;
 
 class Program {
     static void Main(string[] args) {
 
-        Core.Initialize();
-        Pomodoro pomo;
 
-        Console.Write("Ingresa los minutos: ");
-        int min = Convert.ToInt32(Console.ReadLine());
-
-        pomo = new Pomodoro(min);
-
-        pomo.StartWork();          
+        Pomodoro pomo = new Pomodoro(1);        
+        pomo.StartWork();
 
         Console.ReadKey();
-
     }
 }

@@ -11,6 +11,9 @@
   <ItemGroup>
     <PackageReference Include="GtkSharp" Version="3.24.24.95" />
     <PackageReference Include="LibVLCSharp" Version="3.9.1" />
+    <PackageReference Include="System.Windows.Extensions" Version="9.0.0" />
+
+
   </ItemGroup>
 
 </Project>

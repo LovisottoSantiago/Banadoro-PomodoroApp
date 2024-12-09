@@ -23,3 +23,5 @@
 /home/lovi/GitHub/Pomodoro-Timer/obj/Debug/net9.0/Pomodoro-Timer.pdb
 /home/lovi/GitHub/Pomodoro-Timer/obj/Debug/net9.0/Pomodoro-Timer.genruntimeconfig.cache
 /home/lovi/GitHub/Pomodoro-Timer/obj/Debug/net9.0/ref/Pomodoro-Timer.dll
+/home/lovi/GitHub/Pomodoro-Timer/bin/Debug/net9.0/System.Windows.Extensions.dll
+/home/lovi/GitHub/Pomodoro-Timer/bin/Debug/net9.0/runtimes/win/lib/net9.0/System.Windows.Extensions.dll
