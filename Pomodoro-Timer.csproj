@@ -8,4 +8,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="GtkSharp" Version="3.24.24.95" />
+    <PackageReference Include="LibVLCSharp" Version="3.9.1" />
+  </ItemGroup>
+
 </Project>

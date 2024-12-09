@@ -1,21 +1,21 @@
-﻿public class Program {
+﻿using System;
+using System.Security.Cryptography.X509Certificates;
+using LibVLCSharp.Shared;
 
-    public static void Main(string[] args){
+class Program {
+    static void Main(string[] args) {
 
+        Core.Initialize();
         Pomodoro pomo;
 
-        System.Console.WriteLine("Ingresa los minutos: ");
+        Console.Write("Ingresa los minutos: ");
         int min = Convert.ToInt32(Console.ReadLine());
-          
 
-        if (min > 0) {
-                pomo = new Pomodoro(min);
-                pomo.StartWork();
-        }
+        pomo = new Pomodoro(min);
 
-
+        pomo.StartWork();          
 
         Console.ReadKey();
-    }
 
+    }
 }
