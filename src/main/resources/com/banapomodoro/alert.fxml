@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Asegúrate de importar la clase Text -->
+
+<VBox alignment="CENTER" maxHeight="200.0" maxWidth="400.0" minHeight="400.0" minWidth="600.0" prefHeight="200.0" prefWidth="400.0" spacing="10" style="-fx-padding: 0; -fx-background-color: #FF0000;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" scaleX="2.0" scaleY="2.0">
+      <image>
+         <Image url="@../../../../../img-edit.jpg" />
+      </image>
+   </ImageView>
+   <TilePane alignment="CENTER" />
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</VBox>
