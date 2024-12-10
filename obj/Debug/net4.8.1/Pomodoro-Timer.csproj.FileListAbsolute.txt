@@ -1,6 +1,0 @@
-/home/lovi/GitHub/Pomodoro-Timer/obj/Debug/net4.8.1/Pomodoro-Timer.csproj.AssemblyReference.cache
-/home/lovi/GitHub/Pomodoro-Timer/obj/Debug/net4.8.1/Pomodoro-Timer.GeneratedMSBuildEditorConfig.editorconfig
-/home/lovi/GitHub/Pomodoro-Timer/obj/Debug/net4.8.1/Pomodoro-Timer.AssemblyInfoInputs.cache
-/home/lovi/GitHub/Pomodoro-Timer/obj/Debug/net4.8.1/Pomodoro-Timer.AssemblyInfo.cs
-/home/lovi/GitHub/Pomodoro-Timer/obj/Debug/net4.8.1/Pomodoro-Timer.csproj.CoreCompileInputs.cache
-/home/lovi/GitHub/Pomodoro-Timer/obj/Debug/net4.8.1/Pomodoro-Timer.sourcelink.json
