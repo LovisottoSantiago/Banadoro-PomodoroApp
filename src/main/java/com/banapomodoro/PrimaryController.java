@@ -23,12 +23,10 @@ public class PrimaryController {
     public void onStartBtnClick() {
         try {
             int minutes = Integer.parseInt(minInput.getText());
-            if (minutes > 0) {
+            if (minutes > 0 && pomo == null) {
                 pomo = new Pomodoro(minutes, timeLeftCountdown);
                 pomo.Start();
-            } else {
-                timeLeftCountdown.setText("Por favor ingrese un tiempo válido.");
-            }
+            } 
         } catch (NumberFormatException e) {
             timeLeftCountdown.setText("Por favor ingrese un número válido.");
         }
