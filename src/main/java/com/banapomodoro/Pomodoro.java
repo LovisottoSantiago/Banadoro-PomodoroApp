@@ -24,10 +24,12 @@ public class Pomodoro {
     private Timer timer;
     private int timeLeft;
     private final Text timeLeftCountdown;
+    private final Runnable onComplete;
     
-    public Pomodoro(int min, Text timeLeftCountdown) {
+    public Pomodoro(int min, Text timeLeftCountdown, Runnable onComplete) {
         this.timeLeft = min * 60;
         this.timeLeftCountdown = timeLeftCountdown;
+        this.onComplete = onComplete;
     }
 
     public int getTime(){
@@ -51,6 +53,7 @@ public class Pomodoro {
                         timeLeftCountdown.setText("00:00");
                         Stop();
                         Alert();
+                        onComplete.run();
                     }
                 });
             }

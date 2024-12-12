@@ -16,6 +16,12 @@ public class PrimaryController {
     @FXML 
     private Button startButton;
 
+    @FXML 
+    private Button pauseButton;
+
+    @FXML 
+    private Button restartButton;
+
     private Pomodoro pomo;
 
 
@@ -23,10 +29,15 @@ public class PrimaryController {
     public void onStartBtnClick() {
         try {
             int minutes = Integer.parseInt(minInput.getText());
-            if (minutes > 0 && pomo == null) {
-                pomo = new Pomodoro(minutes, timeLeftCountdown);
+            if (minutes > 0) {
+                if (pomo != null) {
+                    pomo = null; 
+                }
+
+                pomo = new Pomodoro(minutes, timeLeftCountdown, this::onPomodoroComplete);
                 pomo.Start();
-            } 
+                startButton.setDisable(true); 
+            }
         } catch (NumberFormatException e) {
             timeLeftCountdown.setText("Por favor ingrese un número válido.");
         }
@@ -38,6 +49,20 @@ public class PrimaryController {
         return startButton;
     }
 
+    @SuppressWarnings("exports")
+    public Button getPauseButton() {
+        return pauseButton;
+    }
+
+    @SuppressWarnings("exports")
+    public Button getRestartButton() {
+        return restartButton;
+    }
+
+    private void onPomodoroComplete() {
+        timeLeftCountdown.setText("00:00");
+        startButton.setDisable(false); 
+    }
 
 
 }
