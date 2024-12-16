@@ -11,7 +11,7 @@
 
 <!-- Asegúrate de importar la clase Text -->
 
-<VBox alignment="CENTER" maxHeight="200.0" maxWidth="400.0" minHeight="200.0" minWidth="280.0" prefHeight="200.0" prefWidth="290.0" spacing="10" style="-fx-padding: 20; -fx-background-color: #100000;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.banapomodoro.PrimaryController">
+<VBox alignment="CENTER" maxHeight="200.0" maxWidth="400.0" minHeight="200.0" minWidth="280.0" prefHeight="200.0" prefWidth="290.0" spacing="10" style="-fx-padding: 20; -fx-background-color: #000000;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.banapomodoro.PrimaryController">
    <TilePane alignment="CENTER" prefHeight="30.0" prefWidth="383.0">
       <children>
          <HBox alignment="TOP_CENTER" style="-fx-spacing: 5;">
