@@ -30,12 +30,12 @@
          </HBox>
          <HBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="96.0" style="-fx-spacing: 5;">
             <children>
-               <Button fx:id="pauseButton" prefHeight="30.0" prefWidth="45.0" style="-fx-background-color: #f8f9fa;" text="||" textAlignment="CENTER">
+               <Button fx:id="pauseButton" onAction="#onPauseBtnClick" prefHeight="30.0" prefWidth="45.0" style="-fx-background-color: #f8f9fa;" text="||" textAlignment="CENTER">
                   <font>
                      <Font name="Poppins Medium" size="14.0" />
                   </font>
                </Button>
-               <Button fx:id="restartButton" prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: #f8f9fa;" text="↺" textAlignment="CENTER">
+               <Button fx:id="restartButton" onAction="#onRestartBtnClick" prefHeight="30.0" prefWidth="34.0" style="-fx-background-color: #f8f9fa;" text="↺" textAlignment="CENTER">
                   <font>
                      <Font name="Poppins Medium" size="14.0" />
                   </font>
