@@ -12,6 +12,9 @@ public class PrimaryController {
     
     @FXML
     private Text timeLeftCountdown;
+
+    @FXML
+    private Text circleCounter;
     
     @FXML 
     private Button startButton;
