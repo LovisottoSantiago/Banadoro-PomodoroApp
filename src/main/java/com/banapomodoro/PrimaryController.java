@@ -26,6 +26,7 @@ public class PrimaryController {
     private Button restartButton;
 
     private Pomodoro pomo;
+    private int pomoCounter;
 
 
     @FXML
@@ -36,14 +37,14 @@ public class PrimaryController {
                 startButton.setDisable(true);
                 pauseButton.setDisable(false);
                 return;
-            }
-
+            }        
             int minutes = Integer.parseInt(minInput.getText());
             if (minutes > 0) {
                 if (pomo != null) {
                     pomo = null; 
                 }
                 pomo = new Pomodoro(minutes, timeLeftCountdown, this::onPomodoroComplete);
+                pomoCounter = pomo.counterFlag;
                 pomo.Start();
                 startButton.setDisable(true); 
                 pauseButton.setDisable(false);
@@ -69,7 +70,6 @@ public class PrimaryController {
             pomo.Stop(); 
             pomo = null; 
         }
-    
         timeLeftCountdown.setText("00:00"); 
         startButton.setDisable(false); 
         pauseButton.setDisable(true);
@@ -80,8 +80,33 @@ public class PrimaryController {
         timeLeftCountdown.setText("00:00");
         startButton.setDisable(false); 
         pauseButton.setDisable(true);
+
+        pomoCounter = pomo.counterFlag; 
+        updateCircleCounter();
     }
     
+
+    private void updateCircleCounter(){
+        switch (pomoCounter) {
+            case 0:
+                circleCounter.setText("○○○○");
+                break;
+            case 1:
+                circleCounter.setText("●○○○");
+                break;
+            case 2:
+                circleCounter.setText("●●○○");
+                break;
+            case 3:
+                circleCounter.setText("●●●○");
+                break;
+            case 4:
+                circleCounter.setText("●●●●");
+                break;
+            default:
+                circleCounter.setText("○○○○");
+        }
+    }
 
     @SuppressWarnings("exports")
     public Button getStartButton() {

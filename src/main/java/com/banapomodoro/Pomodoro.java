@@ -28,6 +28,7 @@ public class Pomodoro {
   private final Runnable onComplete;
   private boolean isPaused = false;
   private RandomSelector randomnizer;
+  public int counterFlag = 0;
 
   public Pomodoro(int min, Text timeLeftCountdown, Runnable onComplete) {
     this.timeLeft = min * 60;
@@ -61,7 +62,7 @@ public class Pomodoro {
             } else {
               timeLeftCountdown.setText("00:00");
               Stop();
-              Alert();
+              Alert();              
               onComplete.run();
             }
           }
@@ -116,6 +117,7 @@ public class Pomodoro {
     newStage.requestFocus();
     newStage.setFullScreen(true);
     newStage.setAlwaysOnTop(true);
+    counterFlag++;
 
     // Sound
     try {
@@ -131,7 +133,6 @@ public class Pomodoro {
           clip.close();
         }
       });
-
     } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
 
     }
