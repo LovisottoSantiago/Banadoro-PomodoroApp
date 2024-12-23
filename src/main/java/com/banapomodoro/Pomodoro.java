@@ -27,6 +27,7 @@ public class Pomodoro {
   private final Text timeLeftCountdown;
   private final Runnable onComplete;
   private boolean isPaused = false;
+  private RandomSelector randomnizer;
 
   public Pomodoro(int min, Text timeLeftCountdown, Runnable onComplete) {
     this.timeLeft = min * 60;
@@ -90,10 +91,15 @@ public class Pomodoro {
     newStage.setTitle("DESCANSA TROLAZO!!!");
     newStage.initModality(Modality.APPLICATION_MODAL);
 
+    randomnizer = new RandomSelector();
+    randomnizer.getRandom();
+
     StackPane layout = new StackPane();
     layout.setStyle("-fx-background-color: red;");
+    String imgPath = randomnizer.getRandomName();
+    String audioPath = randomnizer.getRandomSong();
 
-    ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream("/assets/img/bana.png")));
+    ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream(imgPath)));
 
     imageView.setPreserveRatio(true);
     imageView.setCache(true);
@@ -113,7 +119,7 @@ public class Pomodoro {
 
     // Sound
     try {
-      File soundFile = new File("cdt-el-bananero.wav");
+      File soundFile = new File(audioPath);
       AudioInputStream audioStream = AudioSystem.getAudioInputStream(soundFile);
       Clip clip = AudioSystem.getClip();
       clip.open(audioStream);
