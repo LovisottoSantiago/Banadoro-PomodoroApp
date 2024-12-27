@@ -28,7 +28,7 @@ public class Pomodoro {
   private final Runnable onComplete;
   private boolean isPaused = false;
   private RandomSelector randomnizer;
-  public int counterFlag = 0;
+  public int counterFlag;
 
   public Pomodoro(int min, Text timeLeftCountdown, Runnable onComplete) {
     this.timeLeft = min * 60;
@@ -62,14 +62,8 @@ public class Pomodoro {
             } else {
               timeLeftCountdown.setText("00:00");
               
-              if (counterFlag < 4) {
-                counterFlag++;
-              }
-              else {
-                counterFlag = 0;
-              }
-              System.out.println("El estado de la flag es: " + counterFlag); //debuging
               Stop();
+              IncreaseCounter();
               Alert();         
               onComplete.run();
             }
@@ -145,5 +139,12 @@ public class Pomodoro {
     }
 
   }
+
+
+  public void IncreaseCounter() {
+    counterFlag = (counterFlag + 1) % 5; 
+    System.out.println("The flag state is: " + counterFlag); // Debugging
+  }
+
 
 }

@@ -26,8 +26,6 @@ public class PrimaryController {
     private Button restartButton;
 
     private Pomodoro pomo;
-    private int pomoCounter;
-
 
     @FXML
     public void onStartBtnClick() {
@@ -44,10 +42,9 @@ public class PrimaryController {
                     pomo = null; 
                 }
                 pomo = new Pomodoro(minutes, timeLeftCountdown, this::onPomodoroComplete);
-                pomoCounter = pomo.counterFlag;
                 pomo.Start();
                 startButton.setDisable(true); 
-                System.out.println("estado: " + pomoCounter); //debuging
+
                 pauseButton.setDisable(false);
             }
         } catch (NumberFormatException e) {
@@ -82,30 +79,16 @@ public class PrimaryController {
         startButton.setDisable(false); 
         pauseButton.setDisable(true);
 
-        pomoCounter = pomo.counterFlag; 
         updateCircleCounter();
     }
     
 
     private void updateCircleCounter(){
-        switch (pomoCounter) {
-            case 0:
-                circleCounter.setText("○○○○");
-                break;
-            case 1:
-                circleCounter.setText("●○○○");
-                break;
-            case 2:
-                circleCounter.setText("●●○○");
-                break;
-            case 3:
-                circleCounter.setText("●●●○");
-                break;
-            case 4:
-                circleCounter.setText("●●●●");
-                break;
-            default:
-                circleCounter.setText("○○○○");
+        String[] states = {"○○○○", "●○○○", "●●○○", "●●●○", "●●●●"};
+        if (pomo != null) {
+            circleCounter.setText(states[pomo.counterFlag]);
+        } else {
+            circleCounter.setText("○○○○");
         }
     }
 
