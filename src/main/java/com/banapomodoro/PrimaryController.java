@@ -27,6 +27,8 @@ public class PrimaryController {
 
     private Pomodoro pomo;
 
+    private int counterFlag = 0;
+
     @FXML
     public void onStartBtnClick() {
         try {            
@@ -43,12 +45,16 @@ public class PrimaryController {
                 }
                 pomo = new Pomodoro(minutes, timeLeftCountdown, this::onPomodoroComplete);
                 pomo.Start();
+                if (counterFlag == 4){
+                    counterFlag = 0;
+                    circleCounter.setText("○○○○");
+                }
                 startButton.setDisable(true); 
 
                 pauseButton.setDisable(false);
             }
         } catch (NumberFormatException e) {
-            timeLeftCountdown.setText("Por favor ingrese un número válido.");
+            timeLeftCountdown.setText("00:00"); 
         }
     }
 
@@ -79,14 +85,17 @@ public class PrimaryController {
         startButton.setDisable(false); 
         pauseButton.setDisable(true);
 
-        updateCircleCounter();
+        if (counterFlag < 4){
+            counterFlag++;
+            updateCircleCounter();
+        }
     }
     
 
     private void updateCircleCounter(){
-        String[] states = {"○○○○", "●○○○", "●●○○", "●●●○", "●●●●"};
+        String[] states = {"○○○○","●○○○", "●●○○", "●●●○", "●●●●"};
         if (pomo != null) {
-            circleCounter.setText(states[pomo.counterFlag]);
+            circleCounter.setText(states[counterFlag]);
         } else {
             circleCounter.setText("○○○○");
         }
