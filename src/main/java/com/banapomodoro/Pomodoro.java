@@ -61,8 +61,16 @@ public class Pomodoro {
               timeLeft--;
             } else {
               timeLeftCountdown.setText("00:00");
+              
+              if (counterFlag < 4) {
+                counterFlag++;
+              }
+              else {
+                counterFlag = 0;
+              }
+              System.out.println("El estado de la flag es: " + counterFlag); //debuging
               Stop();
-              Alert();              
+              Alert();         
               onComplete.run();
             }
           }
@@ -117,7 +125,6 @@ public class Pomodoro {
     newStage.requestFocus();
     newStage.setFullScreen(true);
     newStage.setAlwaysOnTop(true);
-    counterFlag++;
 
     // Sound
     try {

@@ -47,6 +47,7 @@ public class PrimaryController {
                 pomoCounter = pomo.counterFlag;
                 pomo.Start();
                 startButton.setDisable(true); 
+                System.out.println("estado: " + pomoCounter); //debuging
                 pauseButton.setDisable(false);
             }
         } catch (NumberFormatException e) {
